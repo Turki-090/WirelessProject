@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "951027887933",
+    "project_id": "wirelessapp-bb356",
+    "storage_bucket": "wirelessapp-bb356.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:951027887933:android:79aeb1cefdcb41aa785f54",
+        "android_client_info": {
+          "package_name": "com.example.wirelessproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeDiUOIqnOI-mHWFyMo1CcEN29bozww6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
