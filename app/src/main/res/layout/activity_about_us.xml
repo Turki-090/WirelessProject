@@ -34,7 +34,7 @@
         android:id="@+id/teamMembers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Team Members:\n- Developer 1: [Name], [Degree]\n- Developer 2: [Name], [Degree]\n- Developer 3: [Name], [Degree]"
+        android:text="Team Members:\n- Developer 1: Turki Alufarrej, Product manegar - Team Leader \n- Developer 2: Eyad Omar, UX/UI designer \n- Developer 3: Anas Mohammed, Programmer - DBA"
         android:textSize="16sp"
         android:lineSpacingExtra="4dp" />
 </LinearLayout>

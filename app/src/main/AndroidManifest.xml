@@ -26,6 +26,15 @@
         <!-- About Us Activity -->
         <activity android:name=".AboutUsActivity" />
 
+        <!-- Contact Us Activity -->
+        <activity android:name=".ContactUsActivity" />
+
+        <activity android:name=".ProductGalleryActivity" />
+
+        <activity android:name=".ProductDetailsActivity" />
+
+
+
     </application>
 
 </manifest>

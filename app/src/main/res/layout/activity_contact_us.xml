@@ -4,41 +4,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="center">
+    android:padding="16dp">
 
-    <!-- App Title -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to Electronic Products App!"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:paddingBottom="16dp" />
-
-    <!-- Navigate to Product Gallery -->
-    <Button
-        android:id="@+id/productGalleryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go to Product Gallery"
-        android:layout_marginBottom="12dp" />
-
-    <!-- Navigate to About Us -->
-    <Button
-        android:id="@+id/aboutUsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="About Us"
-        android:layout_marginBottom="12dp" />
-
-    <!-- Navigate to Contact Us -->
-    <Button
-        android:id="@+id/contactUsButton"
+        android:id="@+id/contactUsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Contact Us"
-        android:layout_marginBottom="12dp" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:paddingBottom="16dp" />
+
+    <TextView
+        android:id="@+id/contactEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email: support@example.com"
+        android:textSize="16sp"
+        android:paddingBottom="8dp" />
+
+    <TextView
+        android:id="@+id/contactPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone: +966509173007"
+        android:textSize="16sp"
+        android:paddingBottom="8dp" />
+
+    <TextView
+        android:id="@+id/contactAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address: King Fahad Street, Riyadh, Saudi Arabia"
+        android:textSize="16sp"
+        android:paddingBottom="8dp" />
 
 </LinearLayout>

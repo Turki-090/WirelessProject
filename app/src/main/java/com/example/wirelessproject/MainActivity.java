@@ -1,17 +1,9 @@
 package com.example.wirelessproject;
 
-import android.net.Uri;
-import android.os.Bundle;
-import android.widget.VideoView;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,19 +12,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize Firebase Database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
+        // Navigate to Product Gallery
+        Button productGalleryButton = findViewById(R.id.productGalleryButton);
+        productGalleryButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ProductGalleryActivity.class);
+            startActivity(intent);
+        });
 
-        // Write a test value to the database
-        myRef.setValue("Hello, Firebase!");
-
+        // Navigate to About Us page
         Button aboutUsButton = findViewById(R.id.aboutUsButton);
         aboutUsButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, AboutUsActivity.class);
             startActivity(intent);
         });
+
+        // Navigate to Contact Us page
+        Button contactUsButton = findViewById(R.id.contactUsButton);
+        contactUsButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ContactUsActivity.class);
+            startActivity(intent);
+        });
     }
-
 }
-
