@@ -33,6 +33,12 @@
 
         <activity android:name=".ProductDetailsActivity" />
 
+        <activity android:name=".ShoppingCartActivity" />
+
+
+
+
+
 
 
     </application>

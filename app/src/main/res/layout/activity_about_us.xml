@@ -1,40 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#FFFFFF">
+    android:background="@color/white"
+    android:foregroundGravity="bottom">
 
     <!-- Header -->
-    <TextView
-        android:id="@+id/aboutUsHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="About Us"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:paddingBottom="16dp" />
 
     <!-- Developer Details -->
-    <TextView
-        android:id="@+id/developerDetails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="We are a team of passionate developers dedicated to creating user-friendly and innovative applications. Our interests include mobile development, UX design, and problem-solving."
-        android:textSize="16sp"
-        android:lineSpacingExtra="4dp"
-        android:paddingBottom="16dp" />
 
     <!-- Team Members -->
-    <TextView
-        android:id="@+id/teamMembers"
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Team Members:\n- Developer 1: Turki Alufarrej, Product manegar - Team Leader \n- Developer 2: Eyad Omar, UX/UI designer \n- Developer 3: Anas Mohammed, Programmer - DBA"
+        android:background="#000000"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/_2620" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/_2620" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/_2620" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="354dp"
+        android:layout_height="112dp"
+        android:layout_marginBottom="4dp"
+        android:text="Salman Alyahya\n a skilled software engineer with a passion for innovation and excellence in mobile app development.\n\nTurki Almonef\na creative designer transforming complex requirements into intuitive user interfaces."
+        android:textColor="#AD000000"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="412dp"
+        android:layout_height="123dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/aboutabout" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="341dp"
+        android:layout_height="171dp"
+        android:layout_marginTop="16dp"
+        android:text="Welcome to Arabah (عربة), your go-to mobile application for an enhanced shopping experience. Our mission is to revolutionize the way you shop online by providing a seamless and efficient platform that connects you with the products you need. Arabah is designed to offer a user-friendly interface and robust functionality, ensuring that your shopping experience is both convenient and enjoyable."
+        android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="16sp"
-        android:lineSpacingExtra="4dp" />
-</LinearLayout>
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="373dp"
+        android:layout_height="168dp"
+        android:layout_marginTop="16dp"
+        android:text="Our Story\n\n Arabah was born out of a desire to create a mobile application that simplifies the shopping process while celebrating the rich cultural heritage of the Arab world. Our team, comprised of passionate and innovative individuals, shared a common vision: to develop a platform that merges modern technology with traditional values. With this vision in mind, Arabah aims to provide a unique and personalized shopping experience that meets the diverse needs of our users."
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="372dp"
+        android:layout_height="165dp"
+        android:layout_marginTop="8dp"
+        android:text="Our Mission\n\n  Our mission is to deliver cutting-edge solutions that cater to the evolving needs of our customers. By harnessing the power of technology, we strive to make everyday shopping tasks more accessible and efficient. Our commitment to excellence ensures that users receive real-time information about product availability, prices, and other essential details, making their shopping journey smooth and enjoyable."
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
