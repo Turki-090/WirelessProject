@@ -2,8 +2,10 @@ package com.example.wirelessproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.view.MenuItem;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,32 +14,36 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Navigate to Product Gallery
-        Button productGalleryButton = findViewById(R.id.productGalleryButton);
-        productGalleryButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, ProductGalleryActivity.class);
-            startActivity(intent);
-        });
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
 
-        // Navigate to About Us page
-        Button aboutUsButton = findViewById(R.id.aboutUsButton);
-        aboutUsButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, AboutUsActivity.class);
-            startActivity(intent);
-        });
+        // Set the "Home" tab as the default selected item
+        bottomNavigationView.setSelectedItemId(R.id.home);
 
-        Button cartButton = findViewById(R.id.cartButton);
-        cartButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, CartActivity.class);
-            startActivity(intent);
-        });
-
-
-        // Navigate to Contact Us page
-        Button contactUsButton = findViewById(R.id.contactUsButton);
-        contactUsButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, ContactUsActivity.class);
-            startActivity(intent);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                if (id == R.id.home) {
+                    // Restart MainActivity to go back to the welcome screen
+                    Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    return true;
+                } else if (id == R.id.menu) {
+                    startActivity(new Intent(MainActivity.this, ProductGalleryActivity.class));
+                    return true;
+                } else if (id == R.id.about) {
+                    startActivity(new Intent(MainActivity.this, AboutUsActivity.class));
+                    return true;
+                } else if (id == R.id.shopping) {
+                    startActivity(new Intent(MainActivity.this, ShoppingCartActivity.class));
+                    return true;
+                } else if (id == R.id.contact) {
+                    startActivity(new Intent(MainActivity.this, ContactUsActivity.class));
+                    return true;
+                }
+                return false;
+            }
         });
     }
 }

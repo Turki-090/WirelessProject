@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "WirelessProject"
 include(":app")
- 
+

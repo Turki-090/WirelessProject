@@ -4,11 +4,12 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
@@ -58,8 +59,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             // Start the ProductDetailsActivity
             holder.itemView.getContext().startActivity(intent);
         });
-    }
 
+        // Add click listener for the "Add to Cart" button
+        holder.addToCartButton.setOnClickListener(v -> {
+            ShoppingCart.getInstance().addItem(product);
+            Toast.makeText(holder.itemView.getContext(), product.getName() + " added to cart.", Toast.LENGTH_SHORT).show();
+        });
+    }
 
     @Override
     public int getItemCount() {
@@ -68,12 +74,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     static class ProductViewHolder extends RecyclerView.ViewHolder {
         TextView nameTextView, priceTextView, categoryTextView;
+        Button addToCartButton;
 
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
             nameTextView = itemView.findViewById(R.id.productName);
             priceTextView = itemView.findViewById(R.id.productPrice);
             categoryTextView = itemView.findViewById(R.id.productCategory);
+            addToCartButton = itemView.findViewById(R.id.add_to_cart_button);
         }
     }
 }

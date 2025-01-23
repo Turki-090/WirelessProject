@@ -7,9 +7,8 @@ public class Product {
     private String description;
     private double price;
 
-    public Product() {
-        // Default constructor required for Firebase
-    }
+    // No-argument constructor
+    public Product() {}
 
     public Product(String id, String name, String category, String description, double price) {
         this.id = id;
@@ -19,13 +18,45 @@ public class Product {
         this.price = price;
     }
 
-    public Product(String id, String name, String category, String description, double price, Object o) {
+    // Getters
+    public String getId() {
+        return id;
     }
 
-    // Getter methods to access product details
-    public String getId() { return id; }
-    public String getName() { return name; }
-    public String getCategory() { return category; }
-    public String getDescription() { return description; }
-    public double getPrice() { return price; }
+    public String getName() {
+        return name;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    // Setters
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }
