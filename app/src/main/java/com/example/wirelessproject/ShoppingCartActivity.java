@@ -27,7 +27,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
         cartRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Initialize total cost TextView
-        totalCostTextView = findViewById(R.id.totalCostTextView);
+        totalCostTextView = findViewById(R.id.totalCostTextView );
 
         // Fetch cart items and total cost
         List<Product> cartItems = ShoppingCart.getInstance().getCartItems();

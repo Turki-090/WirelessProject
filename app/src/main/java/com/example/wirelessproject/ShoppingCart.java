@@ -24,17 +24,35 @@ public class ShoppingCart {
     }
 
     public void addItem(Product product) {
-        if (product.getId() == null) {
-            product.setId(databaseRef.push().getKey());
-        }
         cartItems.add(product);
-        databaseRef.child(product.getId()).setValue(product);
+
+        // Notify CartActivity to update total cost
+        if (cartUpdateListener != null) {
+            cartUpdateListener.onCartUpdated();
+        }
     }
 
     public void removeItem(Product product) {
         cartItems.remove(product);
-        databaseRef.child(product.getId()).removeValue();
+
+        // Notify CartActivity to update total cost
+        if (cartUpdateListener != null) {
+            cartUpdateListener.onCartUpdated();
+        }
     }
+
+
+
+    private CartUpdateListener cartUpdateListener;
+
+    public interface CartUpdateListener {
+        void onCartUpdated();
+    }
+
+    public void setCartUpdateListener(CartUpdateListener listener) {
+        this.cartUpdateListener = listener;
+    }
+
 
     public List<Product> getCartItems() {
         return cartItems;
@@ -46,5 +64,14 @@ public class ShoppingCart {
             total += product.getPrice();
         }
         return total;
+    }
+
+    private void updateTotalCost() {
+        double total = getTotalCost();
+        databaseRef.child("totalCost").setValue(total);
+    }
+
+    public DatabaseReference getDatabaseRef() {
+        return databaseRef;
     }
 }

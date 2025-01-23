@@ -1,5 +1,6 @@
 package com.example.wirelessproject;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
-
     private List<Product> cartItems;
 
     public CartAdapter(List<Product> cartItems) {
@@ -20,7 +20,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     @NonNull
     @Override
     public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_cart, parent, false);
         return new CartViewHolder(view);
     }
 
@@ -30,14 +31,24 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         holder.nameTextView.setText(product.getName());
         holder.priceTextView.setText("$" + product.getPrice());
 
+        // Remove item and navigate to ShoppingCartActivity
         holder.removeItemButton.setOnClickListener(v -> {
+            // Remove the item from the cart
             ShoppingCart.getInstance().removeItem(product);
-            cartItems.remove(position);
-            notifyItemRemoved(position);
-            notifyItemRangeChanged(position, cartItems.size());
-            ((TextView) ((ShoppingCartActivity) holder.itemView.getContext()).findViewById(R.id.totalCostTextView)).setText("Total Cost: $" + ShoppingCart.getInstance().getTotalCost());
+
+            // Redirect to ShoppingCartActivity
+            Intent intent = new Intent(holder.itemView.getContext(), ShoppingCartActivity.class);
+            holder.itemView.getContext().startActivity(intent);
+
+            // Finish the current activity to refresh (optional)
+            if (holder.itemView.getContext() instanceof CartActivity) {
+                ((CartActivity) holder.itemView.getContext()).finish();
+            }
         });
     }
+
+
+
 
     @Override
     public int getItemCount() {
