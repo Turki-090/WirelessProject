@@ -32,6 +32,8 @@
         <activity android:name=".ProductGalleryActivity" />
 
         <activity android:name=".ProductDetailsActivity" />
+        <activity android:name=".CartActivity" />
+
 
 
 

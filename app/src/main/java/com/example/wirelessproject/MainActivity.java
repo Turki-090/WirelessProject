@@ -26,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        Button cartButton = findViewById(R.id.cartButton);
+        cartButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, CartActivity.class);
+            startActivity(intent);
+        });
+
+
         // Navigate to Contact Us page
         Button contactUsButton = findViewById(R.id.contactUsButton);
         contactUsButton.setOnClickListener(v -> {

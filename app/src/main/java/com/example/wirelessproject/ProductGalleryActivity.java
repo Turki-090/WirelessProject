@@ -1,7 +1,9 @@
 package com.example.wirelessproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -43,6 +45,12 @@ public class ProductGalleryActivity extends AppCompatActivity {
 
         // Fetch products from Firebase
         fetchProductsFromFirebase();
+
+        Button goToCartButton = findViewById(R.id.goToCartButton);
+        goToCartButton.setOnClickListener(v -> {
+            Intent intent = new Intent(ProductGalleryActivity.this, CartActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void fetchProductsFromFirebase() {

@@ -40,5 +40,21 @@
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:paddingBottom="8dp" />
+
+        <Button
+            android:id="@+id/addToCartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add to Cart"
+            android:layout_gravity="center"
+            android:padding="16dp" />
+
+        <Button
+            android:id="@+id/goToCartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to Cart" />
+
+
     </LinearLayout>
 </ScrollView>
